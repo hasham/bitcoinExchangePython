@@ -2,7 +2,6 @@ from enum import Enum, auto
 
 
 class ExchangeType(Enum):
-    ENUM = auto()
     COINBASE = auto()
     GEMINI = auto()
     KRAKEN = auto()

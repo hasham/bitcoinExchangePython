@@ -1,5 +1,3 @@
-from typing import List
-
 import requests
 
 from exchange import Exchange, ExchangeType
@@ -89,12 +87,11 @@ def main(quantity=10.0):
 
 
 if __name__ == "__main__":
+    while True:
+        try:
+            quantity = float(input("Enter the quantity of BTC to buy/sell: ").strip())
+            break  # Exit loop if input is successfully parsed
+        except ValueError:
+            print("Invalid quantity. Please enter a valid number.")
 
-    try:
-        # Attempt to read the quantity from the first command line argument
-        quantity = float(input("Enter the quantity of BTC to buy/sell: ").strip())
-    except ValueError:
-        # Default to 10.0 if there's an error parsing the input
-        print("No valid quantity provided. Using default quantity of 10.0 BTC.")
-        quantity = 10.0
     main(quantity)
